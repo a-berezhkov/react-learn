@@ -1,8 +1,12 @@
-import "./App.scss";
-import { BobDylan } from "./BobDylan";
-import { CardBlog } from "./CardBlog";
-import { CardLiked } from "./CardLiked";
-import { Jumbotron } from "./Jumbotron";
+import "./styles/App.scss";
+import { BobDylan } from "../components/BobDylan/BobDylan";
+import { Card } from "../components/Card/Card";
+import { CardBlog } from "../components/CardBlog/CardBlog";
+import { CardLiked } from "../components/CardLiked/CardLiked";
+import { Jumbotron } from "../components/Jumbotron/Jumbotron";
+import { Layout } from "../layout/Layout";
+
+const arr = ["text1","text2", "text3"]
 
 const App = () => {
   const cardLiked = {
@@ -18,6 +22,12 @@ const App = () => {
   return (
     <>
       <h1>Заголовок</h1>
+      <Card title="Children" img="#">
+       {
+        arr.map((el,i)=><li key={i}>{el}</li>)
+       }
+      </Card>
+
       <BobDylan />
 
       <CardLiked {...cardLiked} />
@@ -34,6 +44,12 @@ const App = () => {
         description="Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking."
         buttonLabel="Example button"
       />
+
+      <Layout>
+        <CardBlog></CardBlog>
+        <CardBlog></CardBlog>
+        <CardBlog></CardBlog>
+      </Layout>
     </>
   );
 };
