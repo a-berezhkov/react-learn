@@ -5,6 +5,7 @@ import { CardBlog } from "../components/CardBlog/CardBlog";
 import { CardLiked } from "../components/CardLiked/CardLiked";
 import { Jumbotron } from "../components/Jumbotron/Jumbotron";
 import { Layout } from "../layout/Layout";
+import { CardPrice } from "../components/CardPrice/CardPrice";
 
 const arr = ["text1","text2", "text3"]
 
@@ -19,15 +20,27 @@ const App = () => {
       "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Bob_Dylan_-_Azkena_Rock_Festival_2010_2.jpg/440px-Bob_Dylan_-_Azkena_Rock_Festival_2010_2.jpg",
     imgAlt: "Some alt",
   };
+
+
   return (
     <>
       <h1>Заголовок</h1>
+      <h2> Парктика children </h2>
+      <CardPrice type="Free" price="0" buttonText = "Sign up for free" >
+        <ul>
+          {
+          ["10 users included", "2GB of Storage", "Email Support", "help Center"].map((el,i)=><li key={i}>{el}</li>)
+          }
+        </ul>
+      </CardPrice>
+
+      <h2> Теория children</h2>
       <Card title="Children" img="#">
        {
         arr.map((el,i)=><li key={i}>{el}</li>)
        }
       </Card>
-
+      <h2> Парктика пропсы </h2>
       <BobDylan />
 
       <CardLiked {...cardLiked} />
