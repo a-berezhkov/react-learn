@@ -6,6 +6,7 @@ import { CardLiked } from "../components/CardLiked/CardLiked";
 import { Jumbotron } from "../components/Jumbotron/Jumbotron";
 import { Layout } from "../layout/Layout";
 import { CardPrice } from "../components/CardPrice/CardPrice";
+import { Badge } from "../components/Badge/Badge";
 
 const arr = ["text1","text2", "text3"]
 
@@ -26,6 +27,9 @@ const App = () => {
     <>
       <h1>Заголовок</h1>
       <h2> Парктика children </h2>
+      <Badge>105</Badge>
+      <Badge type="success">120</Badge>
+
       <CardPrice type="Free" price="0" buttonText = "Sign up for free" >
         <ul>
           {
