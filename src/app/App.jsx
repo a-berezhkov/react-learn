@@ -19,8 +19,9 @@ import { SimpleForm } from "../components/SimpleForm/SimpleForm";
 import { MouseCoords } from "../components/MouseCoords/MouseCoords";
 import { InputName } from "../components/InputName/InputName";
 import LightSwitch from "../components/LightSwitch/LightSwitch";
+import { CurrentTime } from "../components/CurrentTime/CurrentTime";
 
-const arr = ["text1","text2", "text3"]
+const arr = ["text1", "text2", "text3"];
 
 const App = () => {
   const cardLiked = {
@@ -33,70 +34,81 @@ const App = () => {
       "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Bob_Dylan_-_Azkena_Rock_Festival_2010_2.jpg/440px-Bob_Dylan_-_Azkena_Rock_Festival_2010_2.jpg",
     imgAlt: "Some alt",
   };
-  const user ={
+  const user = {
     name: "andrei",
-    age: 11
-  }
+    age: 11,
+  };
   const logUser = (user) => {
-    console.log("logUser")
+    console.log("logUser");
     console.log(user);
-  }
-
-
+  };
 
   return (
     <>
       <h1>Заголовок</h1>
       <h2> Практика: state </h2>
-      <LightSwitch/>
-      
-      <InputName/>
+      <CurrentTime />
 
-      <MouseCoords/>
-      
-      <SimpleForm/>
+      <LightSwitch />
 
-      <Counter2/>
+      <InputName />
 
-      <Counter/>
+      <MouseCoords />
 
-      <TextAlign/>
+      <SimpleForm />
+
+      <Counter2 />
+
+      <Counter />
+
+      <TextAlign />
 
       <h2> Теория: state </h2>
 
-    
-      <Form/>
+      <Form />
 
       <CardState></CardState>
 
       <h2> Парктика function </h2>
 
-
-      <Button size="l" className="someRandom" variant="error"  children hendler={() => {console.log("Handler Button")}}>
+      <Button
+        size="l"
+        className="someRandom"
+        variant="error"
+        children
+        hendler={() => {
+          console.log("Handler Button");
+        }}
+      >
         TestButton
       </Button>
 
-      <Demo/>
+      <Demo />
 
-      <ButtonFunction user={user} onClick={logUser}/>
+      <ButtonFunction user={user} onClick={logUser} />
 
       <h2> Парктика children </h2>
       <Badge>105</Badge>
       <Badge type="success">120</Badge>
 
-      <CardPrice type="Free" price="0" buttonText = "Sign up for free" >
+      <CardPrice type="Free" price="0" buttonText="Sign up for free">
         <ul>
-          {
-          ["10 users included", "2GB of Storage", "Email Support", "help Center"].map((el,i)=><li key={i}>{el}</li>)
-          }
+          {[
+            "10 users included",
+            "2GB of Storage",
+            "Email Support",
+            "help Center",
+          ].map((el, i) => (
+            <li key={i}>{el}</li>
+          ))}
         </ul>
       </CardPrice>
 
       <h2> Теория children</h2>
       <Card title="Children" img="#">
-       {
-        arr.map((el,i)=><li key={i}>{el}</li>)
-       }
+        {arr.map((el, i) => (
+          <li key={i}>{el}</li>
+        ))}
       </Card>
       <h2> Парктика пропсы </h2>
       <BobDylan />
