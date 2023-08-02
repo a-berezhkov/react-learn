@@ -6,7 +6,7 @@ export const TextAlign = () => {
     const [nextAlign, setNextAlign] = useState("center")
 
     const style = {
-        "text-align": align
+        "textAlign": align
     }
 
     const changeAlign = () =>{
