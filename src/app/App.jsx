@@ -12,6 +12,7 @@ import { Demo } from "../components/Demo/Demo";
 import { Button } from "../components/Button/Button";
 import { CardState } from "../components/CardState/CardState";
 import { Form } from "../components/Form/Form";
+import { TextAlign } from "../components/TextAlign/TextAlign";
 
 const arr = ["text1","text2", "text3"]
 
@@ -35,11 +36,18 @@ const App = () => {
     console.log(user);
   }
 
+
+
   return (
     <>
       <h1>Заголовок</h1>
+      <h2> Практика: state </h2>
+
+      <TextAlign/>
+
       <h2> Теория: state </h2>
 
+    
       <Form/>
 
       <CardState></CardState>
