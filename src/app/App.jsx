@@ -17,6 +17,7 @@ import { Counter } from "../components/Counter/Counter";
 import { Counter2 } from "../components/Counter2/Counter2";
 import { SimpleForm } from "../components/SimpleForm/SimpleForm";
 import { MouseCoords } from "../components/MouseCoords/MouseCoords";
+import { InputName } from "../components/InputName/InputName";
 
 const arr = ["text1","text2", "text3"]
 
@@ -46,6 +47,8 @@ const App = () => {
     <>
       <h1>Заголовок</h1>
       <h2> Практика: state </h2>
+      <InputName/>
+
       <MouseCoords/>
       
       <SimpleForm/>
