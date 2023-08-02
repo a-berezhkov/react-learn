@@ -13,6 +13,7 @@ import { Button } from "../components/Button/Button";
 import { CardState } from "../components/CardState/CardState";
 import { Form } from "../components/Form/Form";
 import { TextAlign } from "../components/TextAlign/TextAlign";
+import { Counter } from "../components/Counter/Counter";
 
 const arr = ["text1","text2", "text3"]
 
@@ -42,6 +43,8 @@ const App = () => {
     <>
       <h1>Заголовок</h1>
       <h2> Практика: state </h2>
+
+      <Counter/>
 
       <TextAlign/>
 
