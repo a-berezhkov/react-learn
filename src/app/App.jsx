@@ -7,6 +7,9 @@ import { Jumbotron } from "../components/Jumbotron/Jumbotron";
 import { Layout } from "../layout/Layout";
 import { CardPrice } from "../components/CardPrice/CardPrice";
 import { Badge } from "../components/Badge/Badge";
+import { ButtonFunction } from "../components/ButtonFunction/ButtonFunction";
+import { Demo } from "../components/Demo/Demo";
+import { Button } from "../components/Button/Button";
 
 const arr = ["text1","text2", "text3"]
 
@@ -21,11 +24,24 @@ const App = () => {
       "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Bob_Dylan_-_Azkena_Rock_Festival_2010_2.jpg/440px-Bob_Dylan_-_Azkena_Rock_Festival_2010_2.jpg",
     imgAlt: "Some alt",
   };
-
+  const user ={
+    name: "andrei",
+    age: 11
+  }
+  const logUser = (user) => {
+    console.log("logUser")
+    console.log(user);
+  }
 
   return (
     <>
       <h1>Заголовок</h1>
+      <h2> Парктика function </h2>
+      <Button size="l" className="someRandom" variant="error"  children hendler={() => {console.log("Handler Button")}}>
+        TestButton
+      </Button>
+      <Demo/>
+      <ButtonFunction user={user} onClick={logUser}/>
       <h2> Парктика children </h2>
       <Badge>105</Badge>
       <Badge type="success">120</Badge>
