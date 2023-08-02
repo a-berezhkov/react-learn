@@ -1,7 +1,8 @@
 import React from 'react'
 
-export const Input = () => {
+export const Input = ({value, onChangeHendler}) => {
+
   return (
-    <div>Input</div>
+    <input value={value} type="text" onChange={onChangeHendler} />
   )
 }

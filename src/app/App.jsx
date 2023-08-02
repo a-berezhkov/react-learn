@@ -10,6 +10,8 @@ import { Badge } from "../components/Badge/Badge";
 import { ButtonFunction } from "../components/ButtonFunction/ButtonFunction";
 import { Demo } from "../components/Demo/Demo";
 import { Button } from "../components/Button/Button";
+import { CardState } from "../components/CardState/CardState";
+import { Form } from "../components/Form/Form";
 
 const arr = ["text1","text2", "text3"]
 
@@ -36,12 +38,23 @@ const App = () => {
   return (
     <>
       <h1>Заголовок</h1>
+      <h2> Теория: state </h2>
+
+      <Form/>
+
+      <CardState></CardState>
+
       <h2> Парктика function </h2>
+
+
       <Button size="l" className="someRandom" variant="error"  children hendler={() => {console.log("Handler Button")}}>
         TestButton
       </Button>
+
       <Demo/>
+
       <ButtonFunction user={user} onClick={logUser}/>
+
       <h2> Парктика children </h2>
       <Badge>105</Badge>
       <Badge type="success">120</Badge>
