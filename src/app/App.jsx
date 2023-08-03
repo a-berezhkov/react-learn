@@ -22,6 +22,7 @@ import LightSwitch from "../components/LightSwitch/LightSwitch";
 import { CurrentTime } from "../components/CurrentTime/CurrentTime";
 import { Accordion } from "../components/Accordion/Accordion";
 import { Jumbotron2 } from "../components/Jumbotron2/Jumbotron2";
+import { Feature } from "../components/Feature/Feature";
 
 const arr = ["text1", "text2", "text3"];
 
@@ -49,14 +50,30 @@ const App = () => {
     <>
       <h1>Заголовок</h1>
       <h2> Практика: условный рендер </h2>
+      <Feature
+        heading="Oh yeah, it's that good1."
+        subHeading="See for yourself."
+        description="Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper."
+        imgUrl={cardLiked.imgLink}
+        imgPos = "right"
+      />
+
+      <Feature
+        heading="Oh yeah, it's that good2."
+        subHeading="See for yourself."
+        description="Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper."
+        imgUrl={cardLiked.imgLink}
+        imgPos = "left"
+      />
+
       <Jumbotron2
-       title="Custom jumbotron"
-       description="Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking."
-       buttonLabel="Example button"
-       showButton={false}
+        title="Custom jumbotron"
+        description="Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking."
+        buttonLabel="Example button"
+        showButton={false}
       />
       <h2> Практика: state </h2>
-      <Accordion/>
+      <Accordion />
 
       <CurrentTime />
 
@@ -101,7 +118,6 @@ const App = () => {
       <h2> Парктика children </h2>
       <Badge>105</Badge>
       <Badge type="success">120</Badge>
-
 
       <CardPrice type="Free" price="0" buttonText="Sign up for free">
         <ul>
