@@ -23,10 +23,14 @@ import { CurrentTime } from "../components/CurrentTime/CurrentTime";
 import { Accordion } from "../components/Accordion/Accordion";
 import { Jumbotron2 } from "../components/Jumbotron2/Jumbotron2";
 import { Feature } from "../components/Feature/Feature";
-
+import { Nav } from "../components/Nav/Nav";
+var classNames = require('classnames');
 const arr = ["text1", "text2", "text3"];
 
 const App = () => {
+  /**
+   * Data for CardLiked component
+   */
   const cardLiked = {
     category: "Test",
     heading: "Heading",
@@ -37,25 +41,50 @@ const App = () => {
       "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Bob_Dylan_-_Azkena_Rock_Festival_2010_2.jpg/440px-Bob_Dylan_-_Azkena_Rock_Festival_2010_2.jpg",
     imgAlt: "Some alt",
   };
+  /**
+   * Data for ButtonFunction component
+   */
   const user = {
     name: "andrei",
     age: 11,
   };
+  /**
+   * Function for ButtonFunction component
+   * @param {F} user
+   */
   const logUser = (user) => {
     console.log("logUser");
     console.log(user);
   };
 
+  /**
+   * Data for Nav component
+   */
+  const menuData = [
+    { title: "Link1", href: "#1", active: true },
+    { title: "Link2", href: "#2" },
+    { title: "Link3", href: "#3" },
+    { title: "Link4", href: "#4", disabled: true },
+  ];
+
   return (
     <>
       <h1>Заголовок</h1>
       <h2> Практика: условный рендер </h2>
+
+      <Nav>
+        {menuData.map((el) => 
+          (<a className={classNames('nav-link', {'active' :el.active} , {"disabled" :el.disabled})}  href= {el.href}   tabindex = {el.disabled ? "-1" : 0}>
+            Link4
+          </a>)
+        )}
+      </Nav>
       <Feature
         heading="Oh yeah, it's that good1."
         subHeading="See for yourself."
         description="Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper."
         imgUrl={cardLiked.imgLink}
-        imgPos = "right"
+        imgPos="right"
       />
 
       <Feature
@@ -63,7 +92,7 @@ const App = () => {
         subHeading="See for yourself."
         description="Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper."
         imgUrl={cardLiked.imgLink}
-        imgPos = "left"
+        imgPos="left"
       />
 
       <Jumbotron2
@@ -113,7 +142,7 @@ const App = () => {
 
       <Demo />
 
-      <ButtonFunction user={user} onClick={logUser} />
+      <ButtonFunction user={user} onClick={()=>{}} />
 
       <h2> Парктика children </h2>
       <Badge>105</Badge>
